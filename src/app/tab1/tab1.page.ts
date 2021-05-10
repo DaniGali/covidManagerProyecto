@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,23 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  private alumnos = [
+    {
+      id: '1',
+      nombre: 'daniel',
+      apellido: 'Galilea'
+    },
+    {
+      id: '2',
+      nombre: 'pepe',
+      apellido: 'pepito'
+    }
+  ]
 
+  constructor(private router: Router) {}
+
+
+  anadirAlumno(){
+    this.router.navigate(['/anadir-alumno'])
+  }
 }

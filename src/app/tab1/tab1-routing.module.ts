@@ -6,6 +6,14 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+  },
+  {
+    path: 'alumno-perfil',
+    loadChildren: () => import('./alumno-perfil/alumno-perfil.module').then( m => m.AlumnoPerfilPageModule)
+  },
+  {
+    path: 'anadir-alumno',
+    loadChildren: () => import('./anadir-alumno/anadir-alumno.module').then( m => m.AnadirAlumnoPageModule)
   }
 ];
 
