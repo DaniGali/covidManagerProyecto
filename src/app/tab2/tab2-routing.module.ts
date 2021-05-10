@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: Tab2Page,
+  },
+  {
+    path: 'anadir-incidencia',
+    loadChildren: () => import('./anadir-incidencia/anadir-incidencia.module').then( m => m.AnadirIncidenciaPageModule)
   }
 ];
 

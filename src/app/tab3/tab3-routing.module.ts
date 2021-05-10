@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: Tab3Page,
+  },
+  {
+    path: 'anadir-actuacion',
+    loadChildren: () => import('./anadir-actuacion/anadir-actuacion.module').then( m => m.AnadirActuacionPageModule)
   }
 ];
 

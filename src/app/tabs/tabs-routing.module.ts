@@ -30,8 +30,16 @@ const routes: Routes = [
         loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
+        path: 'anadir-incidencia',
+        loadChildren: () => import('../tab2/anadir-incidencia/anadir-incidencia.module').then( m => m.AnadirIncidenciaPageModule)
+      },
+      {
         path: 'actuaciones',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+      },
+      {
+        path: 'anadir-actuacion',
+        loadChildren: () => import('../tab3/anadir-actuacion/anadir-actuacion.module').then( m => m.AnadirActuacionPageModule)
       },
       {
         path: '',

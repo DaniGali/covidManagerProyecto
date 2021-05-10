@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class Tab1Page {
 
-  private alumnos = [
+  public alumnos = [
     {
       id: '1',
       nombre: 'daniel',
