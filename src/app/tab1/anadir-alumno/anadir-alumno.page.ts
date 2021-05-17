@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlumnoModel } from '../model/AlumnoModel';
+import { AlumnoService } from '../service/alumno.service';
 
 @Component({
   selector: 'app-anadir-alumno',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnadirAlumnoPage implements OnInit {
 
-  constructor() { }
+  alumno: AlumnoModel;
+
+  constructor(private router: Router, private alumnoService: AlumnoService) {
+    this.alumno = new AlumnoModel();
+   }
 
   ngOnInit() {
+    
+  }
+
+  addAlumno(){
+    this.alumnoService.addAlumno(this.alumno).subscribe((response) => {
+      this.router.navigate(['/alumnos']);
+    });   
   }
 
 }

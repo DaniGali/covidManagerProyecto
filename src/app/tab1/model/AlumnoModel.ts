@@ -8,6 +8,7 @@ export class AlumnoModel{
     id: string;
     dni: string;
     nombre: string;
+    /*
     fechaNacimineto: string;
     telefono: string;
     direccion: string;
@@ -15,5 +16,5 @@ export class AlumnoModel{
     tutor: ProfesorModel;
     incidencia: IncidenciaModel[];
     clase: ClaseModel;
-    datosMedicos: DatosMedicosModel;
+    datosMedicos: DatosMedicosModel;*/
 }
