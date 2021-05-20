@@ -8,7 +8,8 @@ export class AlumnoModel{
     id: string;
     dni: string;
     nombre: string;
-    /*
+    apellido1: string;
+    apellido2: string;
     fechaNacimineto: string;
     telefono: string;
     direccion: string;
@@ -16,5 +17,5 @@ export class AlumnoModel{
     tutor: ProfesorModel;
     incidencia: IncidenciaModel[];
     clase: ClaseModel;
-    datosMedicos: DatosMedicosModel;*/
+    datosMedicos: DatosMedicosModel;
 }

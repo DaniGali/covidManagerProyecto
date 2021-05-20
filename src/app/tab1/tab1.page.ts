@@ -24,4 +24,8 @@ export class Tab1Page implements OnInit{
   anadirAlumno(){
     this.router.navigate(['/anadir-alumno'])
   }
+
+  eliminarAlumno(){
+    console.log("A")
+  }
 }

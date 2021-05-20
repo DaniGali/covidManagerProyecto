@@ -8,8 +8,8 @@ import { AlumnoModel } from '../model/AlumnoModel';
 })
 export class AlumnoService {
 
-  url: string = 'https://covidmanagerproyecto.herokuapp.com/alumnos';
-  url2: string = 'https://covidmanagerproyecto.herokuapp.com/alumno';
+  url: string = 'https://covidmanagerfinal.herokuapp.com/alumnos';
+  url2: string = 'https://covidmanagerfinal.herokuapp.com/alumno';
 
   constructor(private http: HttpClient) { }
 
@@ -27,8 +27,8 @@ export class AlumnoService {
     return this.http.get<AlumnoModel>(this.url2+'/'+id)
   }
 
-  addAlumno(alumno): Observable<AlumnoModel>{
-    return this.http.post<AlumnoModel>(this.url2, JSON.stringify(alumno), this.httpOptions)
+  addAlumno(alumno: AlumnoModel): Observable<any>{
+    return this.http.post<any>(this.url2, alumno, this.httpOptions);
   }
 
   deleteAlumno(id: string){
