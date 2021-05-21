@@ -21,11 +21,16 @@ export class Tab1Page implements OnInit{
     })
   }
 
+  ionViewWillEnter(){
+    this.alumnoService.getAlumnos()
+    .subscribe(data => {
+      console.log(data)
+      this.alumnos = data.content;
+    })
+  }
+
   anadirAlumno(){
     this.router.navigate(['/anadir-alumno'])
   }
-
-  eliminarAlumno(){
-    console.log("A")
-  }
+  
 }

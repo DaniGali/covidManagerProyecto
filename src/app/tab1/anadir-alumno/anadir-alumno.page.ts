@@ -22,8 +22,9 @@ export class AnadirAlumnoPage implements OnInit {
 
   addAlumno(){
     this.alumnoService.addAlumno(this.alumno).subscribe((response) => {
-      this.router.navigate(['/alumnos']);
-    });   
+      this.alumno=response;
+    }); 
+    this.router.navigate(['/alumnos']);  
   }
 
 }

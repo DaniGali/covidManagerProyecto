@@ -21,4 +21,8 @@ export class AlumnoPerfilPage implements OnInit {
     this.alumnoService.getAlumno(recipeId).subscribe(alumno => this.alumno=alumno);
     })
   }
+
+  eliminarAlumno(){
+    this.alumnoService.deleteAlumno(this.alumno?.id);
+  }
 }
