@@ -1,14 +1,15 @@
-<ion-header [translucent]="true">
+<ion-header no-border>
   <ion-toolbar color="primary">
     <ion-title>
       Alumnos
     </ion-title>
   </ion-toolbar>
+  <ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-card *ngFor="let alumno of alumnos">
+    <ion-card *ngFor="let alumno of alumnos | filtro: textoBuscar">
       <ion-card-header color="secondary" [routerLink]="['/alumnos' , alumno.identificador]">
         {{alumno.nombre}} {{alumno.apellido1}} {{alumno.apellido2}}
       </ion-card-header>

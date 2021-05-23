@@ -10,6 +10,7 @@ import { AlumnoService } from './service/alumno.service';
 export class Tab1Page implements OnInit{
 
   alumnos = [];
+  textoBuscar = '';
 
   constructor(private router: Router, private alumnoService: AlumnoService) {}
 
@@ -33,4 +34,7 @@ export class Tab1Page implements OnInit{
     this.router.navigate(['/anadir-alumno'])
   }
   
+  buscar(event){
+    this.textoBuscar = event.detail.value;
+  }
 }
