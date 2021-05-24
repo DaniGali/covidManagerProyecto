@@ -28,11 +28,11 @@ export class AlumnoService {
   }
 
   addAlumno(alumno: AlumnoModel): Observable<any>{
-    return this.http.post<any>(this.url2, alumno, this.httpOptions);
+    return this.http.post<any>(this.url2, alumno);
   }
 
   deleteAlumno(id: string){
-    return this.http.delete(this.url2+'/'+id)
+    return this.http.delete<AlumnoModel>(this.url2+'/'+id, this.httpOptions)
   }
 
   putAlumno(alumno: AlumnoModel){

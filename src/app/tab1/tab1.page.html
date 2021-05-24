@@ -10,11 +10,14 @@
 <ion-content>
   <ion-list>
     <ion-card *ngFor="let alumno of alumnos | filtro: textoBuscar">
-      <ion-card-header color="secondary" [routerLink]="['/alumnos' , alumno.identificador]">
+      <ion-card-header color="primary" [routerLink]="['/alumnos' , alumno.identificador]">
         {{alumno.nombre}} {{alumno.apellido1}} {{alumno.apellido2}}
       </ion-card-header>
       <ion-card-content>
         <b>{{alumno.dni}}</b> / {{alumno.direccion}} / {{alumno.telefono}} 
+        <ion-button (click)="eliminarAlumno(alumno.identificador)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
       </ion-card-content>      
     </ion-card>
   </ion-list>

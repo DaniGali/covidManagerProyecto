@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class IncidenciaService {
 
-  constructor() { }
+  url: string = 'https://covidmanagerfinal.herokuapp.com/incidencia';
+
+  constructor(private http: HttpClient) { }
 }

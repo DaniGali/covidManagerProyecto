@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { Observable } from 'rxjs';
 import { AlumnoModel } from '../model/AlumnoModel';
 import { AlumnoService } from '../service/alumno.service';
 
@@ -12,37 +11,26 @@ import { AlumnoService } from '../service/alumno.service';
 })
 export class AlumnoPerfilPage implements OnInit {
 
-  alumno: AlumnoModel;
+  form: any = {};
+  actualizado = false;
+  recipeId: string;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router ,private alumnoService: AlumnoService, private alertCtrl: AlertController) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
-    const recipeId = paramMap.get('alumnoId')
-    this.alumnoService.getAlumno(recipeId).subscribe(alumno => this.alumno=alumno);
-    })
-  }
-
-  async eliminarAlumno(){
-    const alertElement = await this.alertCtrl.create({
-      header: '¿Estas seguro que quieres eliminar el alumno?',
-      message: 'Ten cuidado',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel'
-        },
-        {
-          text: 'Borrar',
-          handler: () => {
-            this.alumnoService.deleteAlumno(this.alumno?.id);
-            this.router.navigate(['/alumnos']);
-          }
-        }
-      ]
+    this.recipeId = paramMap.get('alumnoId')
+    this.alumnoService.getAlumno(this.recipeId).subscribe(data => {
+      this.form.identificador = this.recipeId;
+      this.form.nombre = data.nombre;
+      this.form.apellido1 = data.apellido1;
+      this.form.apellido2 = data.apellido2;
+      this.form.dni = data.dni;
+      this.form.direccion = data.direccion;
+      this.form.telefono = data.telefono;
     });
-    await alertElement.present();
-
+    console.log(this.form)
+    })
   }
 
   async updateAlumno(){
@@ -57,7 +45,9 @@ export class AlumnoPerfilPage implements OnInit {
         {
           text: 'Actualizar',
           handler: () => {
-            this.alumnoService.putAlumno(this.alumno);
+            this.alumnoService.putAlumno(this.form).subscribe(data => {
+              this.actualizado = true;
+            });
             this.router.navigate(['/alumnos']);
           }
         }

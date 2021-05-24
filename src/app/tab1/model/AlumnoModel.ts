@@ -5,7 +5,7 @@ import { ProfesorModel } from "./ProfesorModel";
 import { ResponsableModel } from "./ResponsableModel";
 
 export class AlumnoModel{
-    id: string;
+    identificador: string;
     dni: string;
     nombre: string;
     apellido1: string;

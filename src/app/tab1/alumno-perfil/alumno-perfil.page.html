@@ -8,15 +8,35 @@
       <ion-button (click)="updateAlumno()">
         <ion-icon name="save"></ion-icon>
       </ion-button>
-      <ion-button (click)="eliminarAlumno()">
-        <ion-icon name="trash"></ion-icon>
-      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <ion-card-title>{{alumno?.nombre}} {{alumno?.apellido1}} {{alumno?.apellido2}}</ion-card-title>
+    <ion-item>
+      <ion-label><b>Nombre:</b></ion-label>
+      <ion-input type="text" name="nombre" [(ngModel)]="form.nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Apellido1:</b></ion-label>
+      <ion-input type="text" name="apellido1" [(ngModel)]="form.apellido1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Apellido2:</b></ion-label>
+      <ion-input type="text" name="apellido2" [(ngModel)]="form.apellido2"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>DNI:</b></ion-label>
+      <ion-input type="text" name="dni" [(ngModel)]="form.dni"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Direccion:</b></ion-label>
+      <ion-input type="text" name="direccion" [(ngModel)]="form.direccion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Telefono:</b></ion-label>
+      <ion-input type="text" name="telefono" [(ngModel)]="form.telefono"></ion-input>
+    </ion-item>
   </ion-card>
 </ion-content>
