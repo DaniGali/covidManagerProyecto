@@ -10,7 +10,7 @@ export class AlumnoModel{
     nombre: string;
     apellido1: string;
     apellido2: string;
-    fechaNacimineto: string;
+    fechaNacimineto: Date;
     telefono: string;
     direccion: string;
     responsables: ResponsableModel[];

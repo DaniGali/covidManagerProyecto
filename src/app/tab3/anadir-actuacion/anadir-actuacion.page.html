@@ -8,5 +8,16 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label>ID:</ion-label>
+    <ion-input [(ngModel)]="actuacion.identificador" placeholder="Escriba el id"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>UltimoDiaClase:</ion-label>
+    <ion-input [(ngModel)]="actuacion.ultimoDiaClase" placeholder="ultimo dia clase (yyyy-MM-dd)"></ion-input>
+  </ion-item>
 
+  <ion-button color="primary" (click)="addActuacion()">
+    Añadir
+  </ion-button>
 </ion-content>

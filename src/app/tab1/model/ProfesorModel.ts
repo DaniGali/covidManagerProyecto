@@ -1,5 +1,5 @@
 export class ProfesorModel{
-    id: string;
+    identificador: string;
     nombre: string;
     telefono: string;
 }

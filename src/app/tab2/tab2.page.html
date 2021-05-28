@@ -7,9 +7,19 @@
 </ion-header>
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-list>
-    <ion-item>
-    </ion-item>
+    <ion-card *ngFor="let incidencia of incidencias"> 
+      <ion-card-header color="primary">{{incidencia.sintomatologia}}</ion-card-header>
+      <ion-card-content>{{incidencia.fecha}}
+        <ion-button (click)="eliminarIncidencia(incidencia.identificador)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-card-content>
+
+    </ion-card>
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

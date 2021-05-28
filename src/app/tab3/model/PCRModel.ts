@@ -1,5 +1,5 @@
 export class PCRModel{
-    id: string;
+    identificador: number;
     fecha: Date;
     tipo: string;
     estado: string;

@@ -22,6 +22,10 @@ const routes: Routes = [
         
       },
       {
+        path: 'login',
+        loadChildren: () => import('../login/login.module').then( m => m.LoginPageModule)     
+      },
+      {
         path: 'anadir-alumno',
         loadChildren: () => import('../tab1/anadir-alumno/anadir-alumno.module').then( m => m.AnadirAlumnoPageModule)
       },

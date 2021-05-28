@@ -14,6 +14,7 @@ export class AlumnoPerfilPage implements OnInit {
   form: any = {};
   actualizado = false;
   recipeId: string;
+  ultimoDia: Date = new Date();
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router ,private alumnoService: AlumnoService, private alertCtrl: AlertController) { }
 
@@ -28,9 +29,12 @@ export class AlumnoPerfilPage implements OnInit {
       this.form.dni = data.dni;
       this.form.direccion = data.direccion;
       this.form.telefono = data.telefono;
+      this.form.responsables = data.responsables;
+      this.form.alergias = data.datosMedicos?.alergias;
     });
-    console.log(this.form)
+    console.log(this.form);
     })
+
   }
 
   async updateAlumno(){
@@ -55,4 +59,5 @@ export class AlumnoPerfilPage implements OnInit {
     });
     await alertElement.present();
   }
+
 }

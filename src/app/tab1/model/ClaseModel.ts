@@ -1,5 +1,5 @@
 export class ClaseModel{
-    id: string;
+    identificador: string;
     codigoBreve: string;
     descripcion: string;
 }

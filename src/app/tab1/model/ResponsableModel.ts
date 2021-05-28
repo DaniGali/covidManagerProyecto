@@ -1,5 +1,5 @@
 export class ResponsableModel{
-    id: string;
+    identificador: number;
     telefono: string;
     parentesco: string;
     nombre: string;

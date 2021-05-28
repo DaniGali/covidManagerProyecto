@@ -8,5 +8,20 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label>ID:</ion-label>
+    <ion-input [(ngModel)]="incidencia.identificador" placeholder="Escriba el id"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Sintomatologia:</ion-label>
+    <ion-input [(ngModel)]="incidencia.sintomatologia" placeholder="Escriba la sintomatologia"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Fecha:</ion-label>
+    <ion-input [(ngModel)]="incidencia.fecha" placeholder="Escriba la fecha (yyyy-MM-dd)"></ion-input>
+  </ion-item>
 
+  <ion-button color="primary" (click)="addIncidencia()">
+    Añadir
+  </ion-button>
 </ion-content>

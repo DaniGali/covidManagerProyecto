@@ -63,4 +63,11 @@ export class Tab1Page implements OnInit{
   buscar(event){
     this.textoBuscar = event.detail.value;
   }
+
+  doRefresh(event) {
+    setTimeout(() => {
+      this.cargarAlumnos();
+      event.target.complete();
+    }, 1000);
+  }
 }

@@ -2,9 +2,9 @@ import { IncidenciaModel } from "src/app/tab2/model/IncidenciaModel";
 import { PCRModel } from "./PCRModel";
 
 export class ActuacionModel{
-    id: string;
+    identificador: string;
     fecha: Date;
-    ultimoDiaCalse: string;
+    ultimoDiaClase: string;
     incidencia: IncidenciaModel;
     pcr: PCRModel[];
 }

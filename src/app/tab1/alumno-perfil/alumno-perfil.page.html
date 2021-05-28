@@ -39,4 +39,44 @@
       <ion-input type="text" name="telefono" [(ngModel)]="form.telefono"></ion-input>
     </ion-item>
   </ion-card>
+
+  
+  <ion-card>
+    <ion-card-header>
+      Responsables:
+    </ion-card-header>
+      <ion-item *ngFor="let responsable of form.responsables">
+        <ion-item>
+          <ion-label><b>Nombre:</b></ion-label>
+          <ion-input>{{responsable.nombre}}</ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label><b>Telefono:</b></ion-label>
+          <ion-input>{{responsable.telefono}}</ion-input>
+        </ion-item>
+      </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Datos Médicos:
+    </ion-card-header>
+      <ion-item>
+        <ion-label><b>Alergias:</b></ion-label>
+        <ion-input type="text" [(ngModel)]="form.alergias"></ion-input>
+      </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Tiempo cuarentena:
+    </ion-card-header>
+    <ion-item>
+      <ion-label>Inicio Cuarentena</ion-label>
+      <ion-datetime placeholder="inicio"
+                    (ngModel)="ultimoDia.toISOString()"
+                    display-format="DD/MM/YYYY"
+                    cancelText="Cancelar" doneText="Aceptar"></ion-datetime>
+    </ion-item>
+  </ion-card>
 </ion-content>
